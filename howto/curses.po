@@ -2,53 +2,55 @@
 # Copyright (C) 2001-2023, Python Software Foundation
 # This file is distributed under the same license as the Python package.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.11\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-01 22:19+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2023-04-19 21:40+0300\n"
 "Last-Translator: \n"
 "Language-Team: TURKISH <python.docs.tr@gmail.com>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #: howto/curses.rst:5
 msgid "Curses Programming with Python"
-msgstr ""
+msgstr "Python ile Curses Programlama"
 
 #: howto/curses.rst:0
 msgid "Author"
-msgstr ""
+msgstr "Yazar"
 
 #: howto/curses.rst:7
 msgid "A.M. Kuchling, Eric S. Raymond"
-msgstr ""
+msgstr "A.M. Kuchling, Eric S. Raymond"
 
 #: howto/curses.rst:0
 msgid "Release"
-msgstr ""
+msgstr "Yayın Sürümü"
 
 #: howto/curses.rst:8
 msgid "2.04"
-msgstr ""
+msgstr "2.04"
 
 #: howto/curses.rst:-1
 msgid "Abstract"
-msgstr ""
+msgstr "Özet"
 
 #: howto/curses.rst:13
 msgid ""
 "This document describes how to use the :mod:`curses` extension module to "
 "control text-mode displays."
 msgstr ""
+"Bu belge, :mod:`curses` uzantı modülünün metin-mod ekranlarını kontrol etmek "
+"için nasıl kullanılacağını açıklar."
 
 #: howto/curses.rst:18
 msgid "What is curses?"
-msgstr ""
+msgstr "Curses nedir?"
 
 #: howto/curses.rst:20
 msgid ""
@@ -60,6 +62,13 @@ msgid ""
 "areas.  Different terminals use widely differing codes, and often have their "
 "own minor quirks."
 msgstr ""
+"Curses kitaplığı, metin tabanlı terminaller için terminalden bağımsız bir "
+"ekran boyama ve klavye işleme olanağı sağlar; bu tür terminaller arasında "
+"VT100'ler, Linux konsolu ve çeşitli programlar tarafından sağlanan simüle "
+"edilmiş terminal bulunur.  Ekran terminalleri, imleci hareket ettirmek, "
+"ekranı kaydırmak ve alanları silmek gibi genel işlemleri gerçekleştirmek "
+"için çeşitli kontrol kodlarını destekler.  Farklı terminaller, çok farklı "
+"kodlar kullanır ve genellikle kendi küçük tuhaflıklarına sahiptir."
 
 #: howto/curses.rst:28
 msgid ""
@@ -70,6 +79,13 @@ msgid ""
 "an X server.  Another is tools such as OS installers and kernel "
 "configurators that may have to run before any graphical support is available."
 msgstr ""
+"Grafik görüntülerinin olduğu bir dünyada, \"neden uğraşalım\" diye "
+"sorulabilir.  Karakter hücreli ekran terminallerinin modası geçmiş bir "
+"teknoloji olduğu doğru, ancak bunlarla süslü şeyler yapabilmenin hala "
+"değerli olduğu niş alanlar var.  Bir niş, bir X sunucusu çalıştırmayan küçük "
+"ayak izi veya gömülü Unix'lerdedir.  Bir diğeri, herhangi bir grafik desteği "
+"mevcut olmadan önce çalıştırılması gerekebilecek işletim sistemi "
+"yükleyicileri ve çekirdek yapılandırıcıları gibi araçlardır."
 
 #: howto/curses.rst:36
 msgid ""
@@ -83,6 +99,15 @@ msgid ""
 "features, consider a user interface library such as `Urwid <https://pypi.org/"
 "project/urwid/>`_."
 msgstr ""
+"Curses kütüphanesi, programcıya birden fazla örtüşmeyen metin penceresi "
+"içeren bir ekranın soyutlamasını sağlayarak oldukça temel işlevsellik "
+"sağlar.  Bir pencerenin içeriği çeşitli şekillerde değiştirilebilir --- "
+"metin ekleme, silme, görünümünü değiştirme --- vecurs kütüphanesi doğru "
+"çıktıyı üretmek için uçbirime hangi kontrol kodlarının gönderilmesi "
+"gerektiğini anlayacaktır.  Curses, düğmeler, onay kutuları veya iletişim "
+"kutuları gibi pek çok kullanıcı arabirimi kavramı sağlamaz; bu tür "
+"özelliklere ihtiyacınız varsa, `Urwid <https://pypi.org/project/urwid/>`_ "
+"gibi bir kullanıcı arabirimi kitaplığı düşünün."
 
 #: howto/curses.rst:46
 msgid ""
@@ -96,6 +121,15 @@ msgid ""
 "older versions of curses carried by some proprietary Unixes may not support "
 "everything, though."
 msgstr ""
+"Curses kütüphanesi orijinal olarak BSD Unix için yazılmıştır; AT&T'den "
+"Unix'in sonraki System V sürümleri birçok geliştirme ve yeni işlev ekledi. "
+"AT&T arayüzünün açık kaynaklı bir uygulaması olan ncurses ile değiştirilen "
+"BSD curses artık korunmamaktadır.  Linux veya FreeBSD gibi açık kaynaklı bir "
+"Unix kullanıyorsanız, sisteminiz neredeyse kesinlikle ncurses kullanır.  "
+"Mevcut ticari Unix sürümlerinin çoğu System V kodunu temel aldığından, "
+"burada açıklanan tüm işlevler muhtemelen kullanılabilir olacaktır.  Yine de, "
+"bazı tescilli Unix'ler tarafından taşınan cursesların eski sürümleri her "
+"şeyi desteklemeyebilir."
 
 #: howto/curses.rst:56
 msgid ""
@@ -103,10 +137,15 @@ msgid ""
 "ported version called `UniCurses <https://pypi.org/project/UniCurses>`_ is "
 "available."
 msgstr ""
+"Python'un Windows sürümü :mod:`curses` modülünü içermez. `UniCurses <https://"
+"pypi.org/project/UniCurses>` adlı taşınan bir sürüm mevcuttur. Ayrıca, "
+"Fredrik Lundh tarafından yazılan, curses aynı API'yi kullanmayan ancak "
+"imleçle adreslenebilen metin çıktısı ve fare ve klavye girişi için tam "
+"destek sağlar."
 
 #: howto/curses.rst:62
 msgid "The Python curses module"
-msgstr ""
+msgstr "Python Curses Modülü"
 
 #: howto/curses.rst:64
 msgid ""
@@ -118,6 +157,13 @@ msgid ""
 "`mvwaddstr` into a single :meth:`~curses.window.addstr` method.  You'll see "
 "this covered in more detail later."
 msgstr ""
+"Python modülü, curses tarafından sağlanan C işlevleri üzerinde oldukça basit "
+"bir sarmalayıcıdır; Eğer zaten C dilindeki curles programlamaya aşina "
+"iseniz, bu bilgiyi Python'a aktarmak gerçekten çok kolay. En büyük fark, "
+"Python arayüzünün :c:func:`addstr`, :c:func:`mvaddstr` ve :c:func:"
+"`mvwaddstr` gibi farklı C fonksiyonlarını tek bir :meth:`~curses.window."
+"addstr` metodu içinde birleştirerek işleri daha basit hale getirmesidir. "
+"Bunun daha sonra daha ayrıntılı olarak ele alındığını göreceksiniz."
 
 #: howto/curses.rst:72
 msgid ""
